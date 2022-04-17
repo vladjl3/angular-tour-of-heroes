@@ -1,13 +1,12 @@
 /* DashboardComponent's private CSS styles */
 
 h2 {
-    text-align: center;
+    text-align: left;
 }
 
-.heroes-menu {
+.top-heroes {
     padding: 0;
     margin: auto;
-    max-width: 1000px;
 
     /* flexbox */
     display: -webkit-box;
@@ -15,11 +14,15 @@ h2 {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-content: flex-start;
     align-items: flex-start;
+}
+
+.top-heroes li::marker {
+    color: #48a2d7;
+    font-size: 1.5em;
 }
 
 a {
@@ -44,7 +47,6 @@ a {
 
 @media (min-width: 600px) {
     a {
-        width: 18%;
         box-sizing: content-box;
     }
 }

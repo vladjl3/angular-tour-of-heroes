@@ -5,6 +5,10 @@
         <label for="hero-name-field">Hero name: </label>
         <input type="text" id="hero-name-field" placeholder="name" [(ngModel)]="hero.name">
     </div>
+    <div>
+        <label for="hero-power-field">Hero power: </label>
+        <input type="text" id="hero-power-field" placeholder="power" [(ngModel)]="hero.power">
+    </div>
     <button type="button" (click)="goBack()">Назад</button>
     <button type="button" (click)="save()">Сохранить</button>
 </div>
