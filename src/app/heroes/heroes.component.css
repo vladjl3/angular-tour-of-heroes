@@ -73,6 +73,11 @@ input {
    background-color: #42545C;
  }
  
+.green {
+  background-color: #15b830;
+  color: white;
+}
+
  button.delete {
    position: absolute;
    left: 210px;
