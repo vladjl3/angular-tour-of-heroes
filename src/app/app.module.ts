@@ -16,6 +16,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { SortingBarComponent } from './components/sorting-bar/sorting-bar.component';
 import { AddNewHeroComponent } from './components/add-new-hero/add-new-hero.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddNewHeroComponent } from './components/add-new-hero/add-new-hero.comp
     HeroSearchComponent,
     HeroesListComponent,
     SortingBarComponent,
-    AddNewHeroComponent
+    AddNewHeroComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
