@@ -1,0 +1,8 @@
+<div *ngIf="options">
+  <label for="sorting-field">Сортировать </label>
+  <select name="sorting" id="sorting-field" (change)="sortingEvent($event)">
+    <option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+</div>

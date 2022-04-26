@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { uniqueNamesGenerator, Config, starWars } from 'unique-names-generator';
 
-import { Hero } from '../interfaces';
+import { Hero } from '../../interfaces';
 
-import { HeroService } from '../services/hero.service';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-heroes',
