@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 // Services
-import { HeroService } from '../services/hero.service';
+import { HeroService } from '../../services/hero.service';
 
 // Interfaces
-import { Hero } from '../interfaces';
+import { Hero } from '../../interfaces';
 
 @Component({
   selector: 'app-hero-detail',
@@ -32,7 +32,7 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }
 
-  save(): void {
+  saveHero(): void {
     if(this.hero) {
       this.heroService.updateHero(this.hero)
         .subscribe(() => this.goBack());
