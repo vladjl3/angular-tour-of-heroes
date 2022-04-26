@@ -3,3 +3,9 @@ export interface Hero {
   name: string;
   power: number;
 }
+
+export interface SortingOption {
+  name: string;
+  value: string;
+  handler: CallableFunction;
+}

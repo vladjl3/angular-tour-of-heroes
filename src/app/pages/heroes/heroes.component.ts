@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroSortingService } from 'src/app/services/hero-sorting.service';
 
 import { uniqueNamesGenerator, Config, starWars } from 'unique-names-generator';
 
-import { Hero } from '../../interfaces';
+import { Hero, SortingOption } from '../../interfaces';
 
 import { HeroService } from '../../services/hero.service';
 
@@ -14,11 +15,18 @@ import { HeroService } from '../../services/hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   heroesTitle: string = 'Представленные герои ';
+
+  public sortingOptions: SortingOption[] =
+    this.heroSortingService.sortingOptions;
+
   nameGeneratorConfig: Config = {
     dictionaries: [starWars],
   };
 
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private heroSortingService: HeroSortingService
+  ) {}
 
   ngOnInit(): void {
     this.getHeroes();
@@ -53,16 +61,7 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
-  sortBy(value: string): void {
-    switch (value) {
-      case 'power':
-        this.heroes.sort((a, b) => b.power - a.power);
-        break;
-      case 'id_desc':
-        this.heroes.sort((a, b) => b.id - a.id);
-        break;
-      case 'id_asc':
-        this.heroes.sort((a, b) => a.id - b.id);
-    }
+  sortHeroes(sortOption: string): void {
+    this.heroes = this.heroSortingService.sortHeroes(sortOption, this.heroes);
   }
 }

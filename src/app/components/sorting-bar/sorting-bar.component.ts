@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SortingOption } from 'src/app/interfaces';
 
 @Component({
   selector: 'sorting-bar',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SortingBarComponent implements OnInit {
   @Input()
-  public options?: string[];
+  public options?: SortingOption[];
 
   @Output()
   private optionChange = new EventEmitter<string>();

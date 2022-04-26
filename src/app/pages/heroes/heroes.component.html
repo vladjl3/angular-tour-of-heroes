@@ -1,8 +1,8 @@
 <h2>{{ heroesTitle }}</h2>
 
 <sorting-bar
-  [options]="['id_asc', 'id_desc', 'power']"
-  (optionChange)="sortBy($event)"
+  [options]="sortingOptions"
+  (optionChange)="sortHeroes($event)"
 ></sorting-bar>
 
 <heroes-list
