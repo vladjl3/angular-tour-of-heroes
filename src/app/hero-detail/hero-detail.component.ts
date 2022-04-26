@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 // Services
-import { HeroService } from '../hero.service';
+import { HeroService } from '../services/hero.service';
 
 // Interfaces
-import { Hero } from '../hero';
+import { Hero } from '../interfaces';
 
 @Component({
   selector: 'app-hero-detail',

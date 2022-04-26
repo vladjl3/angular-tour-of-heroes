@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 //Interfaces
-import { Hero } from './hero';
+import { Hero } from '../interfaces';
 
 //Services
 import { MessageService } from './message.service';
