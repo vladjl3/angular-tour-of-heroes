@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { SortingBarComponent } from './components/sorting-bar/sorting-bar.component';

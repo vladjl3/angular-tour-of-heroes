@@ -1,10 +1,16 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
+      <a routerLink="/detail/{{ hero.id }}">
+        <div class="badge">id -> {{ hero.id }}</div> 
+        <div class="details-col">
+          {{ hero.name }}
+          <div class="details">hero power: {{ hero.power }}</div>
+        </div>
+      </a>
     <ng-container *ngIf="actionButtons">
-      <ng-container *ngTemplateOutlet="actionButtons; context: { $implicit: hero }"></ng-container>
+      <ng-container
+        *ngTemplateOutlet="actionButtons; context: { $implicit: hero }"
+      ></ng-container>
     </ng-container>
   </li>
 </ul>
