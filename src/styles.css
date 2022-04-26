@@ -17,6 +17,8 @@ h3 {
     color: #444;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    text-align: left;
+    margin-bottom: 12px;
 }
 
 body {
