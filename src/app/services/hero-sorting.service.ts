@@ -5,7 +5,7 @@ import { Hero, SortingOption } from '../interfaces';
   providedIn: 'root',
 })
 export class HeroSortingService {
-  public readonly sortingOptions: SortingOption[] = [
+  readonly sortingOptions: SortingOption[] = [
     {
       name: 'По id (asc)',
       value: 'id_asc',

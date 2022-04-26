@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroSortingService } from 'src/app/services/hero-sorting.service';
 
-import { uniqueNamesGenerator, Config, starWars } from 'unique-names-generator';
-
 import { Hero, SortingOption } from '../../interfaces';
 
 import { HeroService } from '../../services/hero.service';
@@ -18,10 +16,6 @@ export class HeroesComponent implements OnInit {
 
   public sortingOptions: SortingOption[] =
     this.heroSortingService.sortingOptions;
-
-  nameGeneratorConfig: Config = {
-    dictionaries: [starWars],
-  };
 
   constructor(
     private heroService: HeroService,
@@ -47,11 +41,7 @@ export class HeroesComponent implements OnInit {
   }
 
   generate(): void {
-    let name = uniqueNamesGenerator(this.nameGeneratorConfig);
-    if (!name) {
-      return;
-    }
-    this.heroService.addHero({ name } as Hero).subscribe((hero) => {
+    this.heroService.generateHero().subscribe((hero) => {
       this.heroes.push(hero);
     });
   }
