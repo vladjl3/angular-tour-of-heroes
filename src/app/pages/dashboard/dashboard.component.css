@@ -12,6 +12,7 @@ h2 {
   display: -webkit-flex;
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
   gap: 24px;
   flex-wrap: wrap;
 }
@@ -59,4 +60,12 @@ a {
 
 a:hover {
   background-color: black;
+}
+
+.test {
+  color: #333;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
 }
