@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Hero, SortingOption } from '../interfaces';
 
-@Injectable({
+@Injectable( {
   providedIn: 'root',
-})
-export class HeroSortingService {
+} )
+export class HeroSortingService
+{
   readonly sortingOptions: SortingOption[] = [
     {
       name: 'По id (asc)',
@@ -23,26 +24,34 @@ export class HeroSortingService {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  sortHeroes(receivedOption: string, heroes: Hero[]): Hero[] {
-    this.sortingOptions.forEach((sortingOption) => {
-      if (sortingOption.value === receivedOption) {
-        sortingOption.handler(heroes);
+  sortHeroes( receivedOption: string, heroes: Hero[] ): Hero[]
+  {
+    let result: Hero[] = [];
+
+    this.sortingOptions.forEach( ( sortingOption ) =>
+    {
+      if ( sortingOption.value === receivedOption )
+      {
+        result = sortingOption.handler( [ ...heroes ] );
       }
-    });
-    return heroes;
+    } );
+    return result;
   }
 
-  private sortByIdAsc(heroes: Hero[]): Hero[] {
-    return heroes.sort((a, b) => a.id - b.id);
+  private sortByIdAsc( heroes: Hero[] ): Hero[]
+  {
+    return heroes.sort( ( a, b ) => a.id - b.id );
   }
 
-  private sortByIdDesc(heroes: Hero[]): Hero[] {
-    return heroes.sort((a, b) => b.id - a.id);
+  private sortByIdDesc( heroes: Hero[] ): Hero[]
+  {
+    return heroes.sort( ( a, b ) => b.id - a.id );
   }
 
-  private sortByPowerDesc(heroes: Hero[]): Hero[] {
-    return heroes.sort((a, b) => b.power - a.power);
+  private sortByPowerDesc( heroes: Hero[] ): Hero[]
+  {
+    return heroes.sort( ( a, b ) => b.power - a.power );
   }
 }

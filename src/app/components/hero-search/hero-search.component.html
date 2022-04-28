@@ -1,6 +1,6 @@
 <div id="search-component">
     <label for="search-box">Поиск нужного героя</label>
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <input #searchBox id="search-box" (input)="onInput(searchBox.value)" />
 
     <ul class="search-result">
         <li *ngFor="let hero of heroes$ | async">

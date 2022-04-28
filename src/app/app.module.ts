@@ -12,7 +12,7 @@ import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { SortingBarComponent } from './components/sorting-bar/sorting-bar.component';
 import { AddNewHeroComponent } from './components/add-new-hero/add-new-hero.component';
