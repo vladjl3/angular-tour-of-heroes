@@ -16,6 +16,6 @@ export const initialState: HeroState = {
 export const heroReducer = createReducer( initialState,
   on( HeroesRetreivedAction, ( state, action ) => ( {
     ...state,
-    heroes: [ { id: 20, name: 'C-3PO', power: 30 } ]
+    heroes: action.heroes
   } ) )
 );

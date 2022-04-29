@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Hero } from 'src/app/interfaces';
 
 @Component( {
@@ -10,7 +11,7 @@ export class HeroesListComponent implements OnInit
 {
 
   @Input()
-  public heroes?: Hero[] | null;
+  public heroes$?: Observable<Hero[]>;
 
   @Input()
   public actionButtons?: TemplateRef<unknown>;

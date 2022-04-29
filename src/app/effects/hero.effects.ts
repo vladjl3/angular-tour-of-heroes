@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 import { HeroService } from '../services/hero.service';
 import { HeroesRetreivedAction, RetrieveHeroesAction } from '../store/hero/hero.actions';
 
@@ -11,7 +11,9 @@ export class HeroEffects
 {
   retreiveHeroes$ = createEffect( () => this.actions$.pipe(
     ofType( RetrieveHeroesAction ),
-    map( () => HeroesRetreivedAction( { heroes: this.heroService.getHeroes() } ) ),
+    switchMap( () => this.heroService.getHeroes().pipe(
+      map( heroes => HeroesRetreivedAction( { heroes } ) )
+    ) )
   ) );
 
   constructor( private actions$: Actions, private heroService: HeroService ) { }

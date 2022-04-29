@@ -34,7 +34,6 @@ export class HeroesComponent implements OnInit
   getHeroes(): void
   {
     this.store.dispatch( RetrieveHeroesAction() );
-    // this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
 
   // add( name: string ): void

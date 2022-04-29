@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="top-heroes">
       <h2>Топовые герои по силе</h2>
-      <heroes-list [heroes]="heroes"></heroes-list>
+      <heroes-list [heroes$]="heroesFromStore$"></heroes-list>
     </div>
     <app-hero-search
       [heroes$]="heroes$"
@@ -11,7 +11,7 @@
   </div>
   <div class="column">
     <h2>Тестовый список из стора</h2>
-    <heroes-list [heroes]="heroesFromStore$ | async"></heroes-list>
+    <heroes-list [heroes$]="heroesFromStore$"></heroes-list>
     <button type="button" class="test" (click)="test()">Получить героев</button>
   </div>
 </div>

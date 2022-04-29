@@ -1,18 +1,15 @@
 //Angular Essentials
-import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 // RxJS
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
+import { Config, starWars, uniqueNamesGenerator } from 'unique-names-generator';
 //Interfaces
 import { Hero } from '../interfaces';
-
 //Services
 import { MessageService } from './message.service';
-import { Config, starWars, uniqueNamesGenerator } from 'unique-names-generator';
 
 @Injectable( {
   providedIn: 'root',
@@ -38,7 +35,7 @@ export class HeroService
   getHeroes(): Observable<Hero[]>
   {
     return this.http.get<Hero[]>( this.heroesUrl ).pipe(
-      tap( ( _ ) => this.log( `fetched heroes at` ) ),
+      tap( ( _ ) => this.log( `fetched heroes` ) ),
       catchError( this.handleError<Hero[]>( 'getHeroes', [] ) )
     );
   }
