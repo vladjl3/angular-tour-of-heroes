@@ -18,7 +18,7 @@ import { SortingBarComponent } from './components/sorting-bar/sorting-bar.compon
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
-import { metaReducers, reducers } from './store';
+import { metaReducers, reducers } from './store/state-index';
 import { EffectsModule } from '@ngrx/effects';
 import { HeroEffects } from './effects/hero.effects';
 

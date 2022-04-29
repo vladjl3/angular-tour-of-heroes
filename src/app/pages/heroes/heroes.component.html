@@ -1,28 +1,21 @@
 <h2>{{ heroesTitle }}</h2>
 
-<sorting-bar
+<!-- <sorting-bar
   [options]="sortingOptions"
   (optionChange)="sortHeroes($event)"
-></sorting-bar>
+></sorting-bar> -->
 
 <heroes-list
-  [heroes]="heroes"
+  [heroes]="heroes$ | async"
   [actionButtons]="actionButtonsTemplate"
 ></heroes-list>
 
-<add-new-hero
+<!-- <add-new-hero
   (heroAdd)="add($event)"
   (heroGenerate)="generate()"
-></add-new-hero>
+></add-new-hero> -->
 
 <!-- Optional templates -->
 <ng-template #actionButtonsTemplate let-hero>
-  <button
-    type="button"
-    class="delete"
-    title="delete hero"
-    (click)="delete(hero)"
-  >
-    x
-  </button>
+  <button type="button" class="delete" title="delete hero">x</button>
 </ng-template>

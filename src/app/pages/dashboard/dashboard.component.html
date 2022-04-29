@@ -1,12 +1,17 @@
-<div class="wrapper">
-  <div class="top-heroes">
-    <h2>Топовые герои по силе</h2>
-    <heroes-list [heroes]="heroes"></heroes-list>
+<div class="column">
+  <div class="wrapper">
+    <div class="top-heroes">
+      <h2>Топовые герои по силе</h2>
+      <heroes-list [heroes]="heroes"></heroes-list>
+    </div>
+    <app-hero-search
+      [heroes$]="heroes$"
+      (searchEvent)="search($event)"
+    ></app-hero-search>
   </div>
-  <app-hero-search
-    [heroes$]="heroes$"
-    (searchEvent)="search($event)"
-  ></app-hero-search>
-  <heroes-list [heroes]="heroesFromStore$ | async"></heroes-list>
-  <button type="button" class="test" (click)="test()">Проверка экшена</button>
+  <div class="column">
+    <h2>Тестовый список из стора</h2>
+    <heroes-list [heroes]="heroesFromStore$ | async"></heroes-list>
+    <button type="button" class="test" (click)="test()">Получить героев</button>
+  </div>
 </div>

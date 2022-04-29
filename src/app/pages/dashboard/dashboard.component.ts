@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, Observable, Subject, switchMap } from 'rxjs';
-import { HeroesRetrieveAction } from 'src/app/store/hero/hero.actions';
+import { RetrieveHeroesAction } from 'src/app/store/hero/hero.actions';
 import { heroesAllSelector } from 'src/app/store/hero/hero.selectors';
 import { Hero } from '../../interfaces';
 import { HeroService } from '../../services/hero.service';
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit
 
   test(): void
   {
-    this.store.dispatch( HeroesRetrieveAction() );
+    this.store.dispatch( RetrieveHeroesAction() );
   }
 
 }
