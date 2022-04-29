@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { RetrieveHeroesAction } from 'src/app/store/hero/hero.actions';
+import { RetrieveHeroes } from 'src/app/store/hero/hero.actions';
 import { Hero, SortingOption } from '../../interfaces';
 import { HeroService } from '../../services/hero.service';
 import { HeroSortingService } from 'src/app/services/hero-sorting.service';
@@ -33,7 +33,7 @@ export class HeroesComponent implements OnInit
 
   getHeroes(): void
   {
-    this.store.dispatch( RetrieveHeroesAction() );
+    this.store.dispatch( RetrieveHeroes() );
   }
 
   // add( name: string ): void
