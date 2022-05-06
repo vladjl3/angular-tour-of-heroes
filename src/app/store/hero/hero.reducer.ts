@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Hero } from "src/app/interfaces";
-import { RetrieveHeroesSuccess } from "./hero.actions";
+import { AddHeroSuccess, RetrieveHeroesSuccess } from "./hero.actions";
 
 export const HEROES_NODE = 'heroes-list';
 
@@ -17,5 +17,16 @@ export const heroReducer = createReducer( initialState,
   on( RetrieveHeroesSuccess, ( state, action ) => ( {
     ...state,
     heroes: action.heroes
+  } ) ),
+  on( AddHeroSuccess, ( state, action ) => ( {
+    ...state,
+    heroes: [
+      ...state.heroes,
+      {
+        id: action.id,
+        name: action.name,
+        power: action.power
+      }
+    ]
   } ) )
 );

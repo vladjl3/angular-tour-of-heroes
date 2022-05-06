@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { RetrieveHeroes } from 'src/app/store/hero/hero.actions';
+import { AddHero, GenerateHero, RetrieveHeroes } from 'src/app/store/hero/hero.actions';
 import { Hero, SortingOption } from '../../interfaces';
 import { HeroService } from '../../services/hero.service';
 import { HeroSortingService } from 'src/app/services/hero-sorting.service';
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 } )
 export class HeroesComponent implements OnInit
 {
-  heroes$: Observable<Hero[]> = this.store.select( heroesAllSelector );
+  heroes$: Observable<Hero[]> = this.store$.select( heroesAllSelector );
   heroesTitle: string = 'Представленные герои ';
 
   public sortingOptions: SortingOption[] =
@@ -23,7 +23,7 @@ export class HeroesComponent implements OnInit
   constructor(
     private heroService: HeroService,
     private heroSortingService: HeroSortingService,
-    private store: Store
+    private store$: Store
   ) { }
 
   ngOnInit(): void
@@ -33,29 +33,18 @@ export class HeroesComponent implements OnInit
 
   getHeroes(): void
   {
-    this.store.dispatch( RetrieveHeroes() );
+    this.store$.dispatch( RetrieveHeroes() );
   }
 
-  // add( name: string ): void
-  // {
-  //   name = name.trim();
-  //   if ( !name )
-  //   {
-  //     return;
-  //   }
-  //   this.heroService.addHero( { name } as Hero ).subscribe( ( hero ) =>
-  //   {
-  //     this.heroes.push( hero );
-  //   } );
-  // }
+  addHero( name: string ): void
+  {
+    this.store$.dispatch( AddHero( { name } as Hero ) );
+  }
 
-  // generate(): void
-  // {
-  //   this.heroService.generateHero().subscribe( ( hero ) =>
-  //   {
-  //     this.heroes.push( hero );
-  //   } );
-  // }
+  generateHero(): void
+  {
+    this.store$.dispatch( GenerateHero() );
+  }
 
   // delete( hero: Hero ): void
   // {

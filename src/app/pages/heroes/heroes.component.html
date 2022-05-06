@@ -10,10 +10,10 @@
   [actionButtons]="actionButtonsTemplate"
 ></heroes-list>
 
-<!-- <add-new-hero
-  (heroAdd)="add($event)"
-  (heroGenerate)="generate()"
-></add-new-hero> -->
+<add-new-hero
+  (heroAdd)="addHero($event)"
+  (heroGenerate)="generateHero()"
+></add-new-hero>
 
 <!-- Optional templates -->
 <ng-template #actionButtonsTemplate let-hero>
